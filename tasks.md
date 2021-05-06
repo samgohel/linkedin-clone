@@ -20,4 +20,9 @@
 * Set Apple Touch Icon From Images Into Index.html
 * Add Basic CSS In Index.css To Maintain Basic Common Design
 
+#### Add Needful Dependencies
+* react-route-dom
+* styled-components
+
+#### 
 ---
