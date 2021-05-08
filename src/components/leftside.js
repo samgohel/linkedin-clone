@@ -10,7 +10,9 @@ const leftside = (props) => {
           <CardBackground />
           <a>
             <Photo />
-            <Link>Welcome, There!</Link>
+            <Link>
+              Welcome, {props.user ? props.user.displayName : "There"}
+            </Link>
           </a>
           <a>
             <AddPhotoText>Add A Photo</AddPhotoText>
@@ -211,5 +213,9 @@ const CommunityCard = styled(ArtCard)`
     }
   }
 `;
-
-export default leftside;
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
+  };
+};
+export default connect(mapStateToProps)(leftside);

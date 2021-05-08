@@ -1,10 +1,16 @@
-import "./App.css";
+import { useEffect } from "react";
+import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/login";
 import Header from "./components/header";
 import Home from "./components/home";
+import "./App.css";
+import { getUserAuth } from "./actions";
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    props.getUserAuth();
+  }, []);
   return (
     <div className="App">
       <Router>
@@ -22,4 +28,12 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getUserAuth: () => dispatch(getUserAuth()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
