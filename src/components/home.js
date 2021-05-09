@@ -89,8 +89,8 @@ const Layout = styled.div`
 
 const mapStateToProps = (state) => {
   return {
-    user: state.userState.user,
+    user: state.userState,
   };
 };
 
-export default connect(mapStateToProps)(home);
+export default connect(undefined, mapStateToProps)(home);

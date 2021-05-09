@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { connect } from "react-redux";
 import React from "react";
 
 const leftside = (props) => {
@@ -215,7 +215,7 @@ const CommunityCard = styled(ArtCard)`
 `;
 const mapStateToProps = (state) => {
   return {
-    user: state.userState.user,
+    user: state.userState,
   };
 };
 export default connect(mapStateToProps)(leftside);

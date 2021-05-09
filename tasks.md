@@ -34,6 +34,7 @@
 * redux-thunk
 * firebase
 * firebase-tools
+* react-player
 
 #### Start Building Components
 
